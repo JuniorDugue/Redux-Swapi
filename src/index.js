@@ -18,7 +18,7 @@ const store = createStore(
   compose(
     applyMiddleware(thunk, logger),
     /* applyMiddleware goes here */
-    window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION_() : f => f,
+    // window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION_() : f => f,
     ),
 );
 

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import { CharacterListView } from "./views";
 import "./styles/App.css";
 
@@ -8,5 +7,6 @@ class App extends Component {
     return <CharacterListView />;
   }
 }
+
 
 export default App;

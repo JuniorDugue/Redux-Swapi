@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-
+import { getChar } from "../actions/index";
 import { CharacterList } from "../components";
 // import actions
 
@@ -11,6 +11,7 @@ class CharacterListView extends React.Component {
 
   componentDidMount() {
     // call our action
+    this.props.getChar()
   }
 
   render() {
@@ -26,9 +27,12 @@ class CharacterListView extends React.Component {
 }
 
 // our mapStateToProps needs to have two properties inherited from state
+const mapDispatchToProps = {
+  getChar,
+}
 // the characters and the fetching boolean
 export default connect(
-  null /* mapStateToProps replaces null here */,
+  null, mapDispatchToProps /* mapStateToProps replaces null here */,
   {
     /* action creators go here */
   }
