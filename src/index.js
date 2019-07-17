@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { Provider } from "react-redux";
+import thunk from "redux-thunk";
 import { createStore, applyMiddleware, compose } from "redux";
 import logger from "redux-logger";
 import rootReducer from "./reducers";
@@ -15,7 +16,7 @@ import rootReducer from "./reducers";
 const store = createStore(
   rootReducer,
   compose(
-    applyMiddleware(logger),
+    applyMiddleware(thunk, logger),
     /* applyMiddleware goes here */
     window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION_() : f => f,
     ),
